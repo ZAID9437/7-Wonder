@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+body {
+    background: #d6eef1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container form {
+    padding: 25px;
+}
+
+.container form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container form .row .col {
+    flex: 1 1 300px;
+}
+
+.col .title {
+    font-size: 22px;
+    color: rgb(237, 55, 23);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.col .inputBox {
+    margin: 15px 0;
+}
+
+.col .inputBox label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.col .inputBox input,
+.col .inputBox select {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.col .inputBox input:focus,
+.col .inputBox select:focus {
+    border: 1px solid #3d17fb;
+    background: #fff;
+}
+
+.col .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.col .flex .inputBox {
+    flex: 1 1;
+    margin-top: 5px;
+}
+
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.payment-methods .method {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.payment-methods .method img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container form .submit_btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background: rgb(1, 143, 34);
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.container form .submit_btn:hover {
+    background: #3d17fb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container form {
+        padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: calc(100% - 20px);
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    position: relative;
+    display: block;
+    height: auto;
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    transform: none;
+}
+    
+    .col .flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .col .title {
+        font-size: 20px;
+    }
+    
+    .payment-methods {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container form {
+        padding: 15px;
+    }
+    
+    .col .inputBox input,
+    .col .inputBox select {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .container form .submit_btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .payment-methods .method {
+        width: 50px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container form {
+        padding: 10px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    height: auto;
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    transform: none;
+}
+    
+    .col .title {
+        font-size: 18px;
+    }
+    
+    .col .inputBox label {
+        font-size: 14px;
+    }
+    
+    .container form .submit_btn {
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    }
+}

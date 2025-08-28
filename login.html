@@ -1,0 +1,773 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+            padding: 20px;
+        }
+        
+        .panels-container {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .image-panel {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+        }
+        
+        .image-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .form-panel {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .logo {
+            margin-bottom: 20px;
+        }
+        
+        .logo i {
+            font-size: 40px;
+            color: #2575fc;
+            background: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+        
+        .input-field:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toggle {
+            cursor: pointer;
+            color: #2575fc;
+            font-weight: 500;
+            margin-top: 20px;
+            display: block;
+        }
+        
+        .toggle:hover {
+            text-decoration: underline;
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .success-message {
+            background: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .panels-container {
+                flex-direction: column;
+                max-width: 420px;
+            }
+            
+            .image-panel {
+                display: none;
+            }
+            
+            .form-panel {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .form-panel {
+                padding: 20px;
+            }
+            
+            .input-field, button {
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .form-panel {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+        }
+        
+        .countdown {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #555;
+        }
+        a {
+            color: #2575fc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="panels-container">
+        <div class="image-panel">
+            <img src="Image/taj.jpg" alt="Taj Mahal">
+        </div>
+        
+        <div class="form-panel">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-user-lock"></i>
+                    <h1>Welcome to Our Site</h1>
+                </div>
+                
+                <h2 id="formTitle">Sign Up</h2>
+                
+                <form id="authForm">
+                    <div class="input-group">
+                        <label for="name" id="nameLabel">Full Name</label>
+                        <input type="text" id="name" class="input-field" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="input-field" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="password-container">
+                            <input type="password" id="password" class="input-field" placeholder="Enter your password" required>
+                            <span class="toggle-password" id="togglePassword">
+                                <i class="far fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn">Create Account</button>
+                </form>
+                
+                <p class="toggle" onclick="toggleForm()">Already have an account? Login</p>
+                <p><a href="index.html">Skip Login</a></p>
+
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> 
+                    <span id="successText">Sign up successful! Redirecting to homepage...</span>
+                    <div class="countdown" id="countdown">5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isSignUp = true;
+        
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+        
+        // Toggle between Sign Up and Login forms
+        function toggleForm() {
+            isSignUp = !isSignUp;
+            document.getElementById("formTitle").textContent = isSignUp ? "Sign Up" : "Login";
+            document.getElementById("name").style.display = isSignUp ? "block" : "none";
+            document.getElementById("nameLabel").style.display = isSignUp ? "block" : "none";
+            document.getElementById("name").required = isSignUp;
+            document.querySelector(".toggle").textContent = isSignUp ? 
+                "Already have an account? Login" : "Don't have an account? Sign Up";
+            document.getElementById("submitBtn").textContent = isSignUp ? "Create Account" : "Login";
+        }
+        
+        // Form submission handler
+        document.getElementById("authForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let name = document.getElementById("name").value;
+            
+            // Validation
+            if (isSignUp && name.trim() === "") {
+                alert("Please enter your name");
+                return;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email address");
+                return;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return;
+            }
+            
+            // Show success message
+            const successMessage = document.getElementById("successMessage");
+            const successText = document.getElementById("successText");
+            successText.textContent = isSignUp ? 
+                "Sign up successful! Redirecting to homepage..." : 
+                "Login successful! Redirecting to homepage...";
+            successMessage.style.display = "block";
+            
+            // Countdown and redirect
+            let count = 5;
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.textContent = count;
+            
+            const countdownInterval = setInterval(function() {
+                count--;
+                countdownElement.textContent = count;
+                
+                if (count <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = "index.html";
+                }
+            }, 1000);
+        });
+        
+        // Initialize form
+        window.onload = function() {
+            // Nothing needed here for now
+        };
+    </script>
+</body>
+<!-- </html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+            padding: 20px;
+        }
+        
+        .panels-container {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .image-panel {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-slider {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            height: 100%;
+        }
+        
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .slide-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .slide-dot.active {
+            background: white;
+        }
+        
+        .form-panel {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .logo i {
+            font-size: 40px;
+            color: #2575fc;
+            background: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+        
+        .input-field:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toggle {
+            cursor: pointer;
+            color: #2575fc;
+            font-weight: 500;
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+        
+        .toggle:hover {
+            text-decoration: underline;
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .success-message {
+            background: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+        
+        .skip-login {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .panels-container {
+                flex-direction: column;
+                max-width: 420px;
+            }
+            
+            .image-panel {
+                height: 200px;
+            }
+            
+            .form-panel {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .form-panel {
+                padding: 20px;
+            }
+            
+            .input-field, button {
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .form-panel {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+        }
+        
+        .countdown {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #555;
+        }
+        a {
+            color: #2575fc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="panels-container">
+        <div class="image-panel">
+            <div class="image-slider" id="imageSlider">
+                <div class="slide" style="background-image: url('Image/taj.jpg')"></div>
+                <div class="slide" style="background-image: url('Image/Chichén Itzá.jpg')"></div>
+                <div class="slide" style="background-image: url('Image/Colosseum.jpg')"></div>
+                <div class="slide" style="background-image: url('Image/Great.jpg')"></div>
+                <div class="slide" style="background-image: url('Image/Machu Picchu.jpg')"></div>
+                <div class="slide" style="background-image: url('Image/Petra.jpg')"></div>
+            </div>
+            <div class="slide-controls">
+                <div class="slide-dot active" data-index="0"></div>
+                <div class="slide-dot" data-index="1"></div>
+                <div class="slide-dot" data-index="2"></div>
+                <div class="slide-dot" data-index="3"></div>
+                <div class="slide-dot" data-index="4"></div>
+                <div class="slide-dot" data-index="5"></div>
+                <!-- <div class="slide-dot" data-index="6"></div> -->
+            </div>
+        </div>
+        
+        <div class="form-panel">
+            <div class="logo">
+                <i class="fas fa-user-lock"></i>
+                <h1>Welcome to Our Site</h1>
+            </div>
+            
+            <h2 id="formTitle">Sign Up</h2>
+            
+            <form id="authForm">
+                <div class="input-group">
+                    <label for="name" id="nameLabel">Full Name</label>
+                    <input type="text" id="name" class="input-field" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="input-field" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="password" class="input-field" placeholder="Enter your password" required>
+                        <span class="toggle-password" id="togglePassword">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <button type="submit" id="submitBtn">Create Account</button>
+            </form>
+            
+            <p class="toggle" onclick="toggleForm()">Already have an account? Login</p>
+            <p class="skip-login"><a href="index.html">Skip Login</a></p>
+
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i> 
+                <span id="successText">Sign up successful! Redirecting to homepage...</span>
+                <div class="countdown" id="countdown">5</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isSignUp = true;
+        let currentSlide = 0;
+        const slideCount = 6;
+        let slideInterval;
+        
+        // Initialize image slider
+        function initImageSlider() {
+            // Set up automatic sliding
+            slideInterval = setInterval(nextSlide, 4000);
+            
+            // Add click events to dots
+            document.querySelectorAll('.slide-dot').forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    goToSlide(index);
+                });
+            });
+        }
+        
+        // Move to next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateSlider();
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+        
+        // Update slider position and active dot
+        function updateSlider() {
+            const slider = document.getElementById('imageSlider');
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active dot
+            document.querySelectorAll('.slide-dot').forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+            
+            // Reset timer
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 4000);
+        }
+        
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+        
+        // Toggle between Sign Up and Login forms
+        function toggleForm() {
+            isSignUp = !isSignUp;
+            document.getElementById("formTitle").textContent = isSignUp ? "Sign Up" : "Login";
+            document.getElementById("name").style.display = isSignUp ? "block" : "none";
+            document.getElementById("nameLabel").style.display = isSignUp ? "block" : "none";
+            document.getElementById("name").required = isSignUp;
+            document.querySelector(".toggle").textContent = isSignUp ? 
+                "Already have an account? Login" : "Don't have an account? Sign Up";
+            document.getElementById("submitBtn").textContent = isSignUp ? "Create Account" : "Login";
+        }
+        
+        // Form submission handler
+        document.getElementById("authForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let name = document.getElementById("name").value;
+            
+            // Validation
+            if (isSignUp && name.trim() === "") {
+                alert("Please enter your name");
+                return;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email address");
+                return;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return;
+            }
+            
+            // Show success message
+            const successMessage = document.getElementById("successMessage");
+            const successText = document.getElementById("successText");
+            successText.textContent = isSignUp ? 
+                "Sign up successful! Redirecting to homepage..." : 
+                "Login successful! Redirecting to homepage...";
+            successMessage.style.display = "block";
+            
+            // Countdown and redirect
+            let count = 5;
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.textContent = count;
+            
+            const countdownInterval = setInterval(function() {
+                count--;
+                countdownElement.textContent = count;
+                
+                if (count <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = "index.html";
+                }
+            }, 1000);
+        });
+        
+        // Initialize form and slider
+        window.onload = function() {
+            initImageSlider();
+        };
+    </script>
+</body>
+</html>

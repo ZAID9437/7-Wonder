@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="pay.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="Pay1.html">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Billing Address</h3>
+
+                    <div class="inputBox">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter email address" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" placeholder="Enter address" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" placeholder="Enter city" required>
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="state">State:</label>
+                            <input type="text" id="state" placeholder="Enter state" required>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="zip">Zip Code:</label>
+                            <input type="number" id="zip" placeholder="123456" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h3 class="title">Payment</h3>
+
+                    <div class="inputBox">
+                        <label>Card Accepted:</label>
+                        <div class="payment-methods">
+                            <div class="method"><i class="fab fa-cc-visa" style="color: #1a1f71; font-size: 24px;"></i></div>
+                            <div class="method"><i class="fab fa-cc-mastercard" style="color: #eb001b; font-size: 24px;"></i></div>
+                            <div class="method"><i class="fab fa-cc-amex" style="color: #006fcf; font-size: 24px;"></i></div>
+                            <div class="method"><i class="fab fa-cc-discover" style="color: #ff6000; font-size: 24px;"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Online Payment:</label>
+                        <div class="payment-methods">
+                            <div class="method"><i class="fas fa-mobile-alt" style="color: #6739b7; font-size: 20px;"></i></div>
+                            <div class="method"><i class="fab fa-google-pay" style="color: #4285f4; font-size: 20px;"></i></div>
+                            <div class="method"><i class="fab fa-amazon-pay" style="color: #ff9900; font-size: 20px;"></i></div>
+                            <div class="method"><i class="fab fa-apple-pay" style="color: #000; font-size: 20px;"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardName">Name On Card:</label>
+                        <input type="text" id="cardName" placeholder="Enter card name" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardNum">Credit Card Number:</label>
+                        <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required>
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="expMonth">Exp Month:</label>
+                            <select id="expMonth" required>
+                                <option value="">Choose month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="expYear">Exp Year:</label>
+                            <select id="expYear" required>
+                                <option value="">Choose Year</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="cvv">CVV</label>
+                            <input type="number" id="cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="Pay Online Payment" class="submit_btn">
+        </form>
+    </div>
+    <script src="pay.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Wonders of the World</title>
+    <link rel="stylesheet" href="learn.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">7 Wonders</div>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="Contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main">
+        <h1 class="page-title">7 Wonders of the World</h1>
+        
+        <div class="wonders-grid">
+            <div class="wonder-card">
+            <img src="Image/Chichén Itzá.jpg" alt="Chichén Itzá" class="wonder-img">
+            <div class="wonder-content">
+                <h3 class="wonder-title">1. Chichén Itzá</h3>
+                <p class="wonder-description">
+                Chichén Itzá was a large pre-Columbian city built by the Maya people of the Terminal Classic period. 
+                The archeological site is located in Tinúm Municipality, Yucatán State, Mexico.
+                </p>
+                <a href="Chichén Itzá.html" class="read-more">Read More</a>
+            </div>
+            </div>
+
+            <div class="wonder-card">
+            <img src="Image/Christ the Redeeme.jpg" alt="Christ the Redeemer" class="wonder-img">
+            <div class="wonder-content">
+                <h3 class="wonder-title">2. Christ the Redeemer</h3>
+                <p class="wonder-description">
+                Christ the Redeemer, colossal statue of Jesus Christ at the summit of Mount Corcovado, Rio de Janeiro, southeastern Brazil. 
+                The statue stands 98 feet (30 metres) tall, its horizontally outstretched arms spanning 92 feet (28 metres).
+                </p>
+                <a href="Christ.html" class="read-more">Read More</a>
+            </div>
+            </div>
+
+            <div class="wonder-card">
+            <img src="Image/Colosseum.jpg" alt="Colosseum" class="wonder-img">
+            <div class="wonder-content">
+                <h3 class="wonder-title">3. Colosseum</h3>
+                <p class="wonder-description">
+                The Colosseum is an elliptical amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. 
+                It is the largest ancient amphitheatre ever built, and is still the largest standing amphitheatre in the world.
+                </p>
+                <a href="Colosseum.html" class="read-more">Read More</a>
+            </div>
+            </div>
+
+            <div class="wonder-card">
+            <img src="Image/Great.jpg" alt="Great Wall of China" class="wonder-img">
+            <div class="wonder-content">
+                <h3 class="wonder-title">4. Great Wall of China</h3>
+                <p class="wonder-description">
+                The Great Wall of China is a series of fortifications in China built across the historical northern borders of ancient Chinese states 
+                and Imperial China as protection against various nomadic groups from the Eurasian Steppe.
+                </p>
+                <a href="Great Wall of China.html" class="read-more">Read More</a>
+            </div>
+            </div>
+
+            <div class="wonder-card">
+            <img src="Image/Machu Picchu.jpg" alt="Machu Picchu" class="wonder-img">
+            <div class="wonder-content">
+                <h3 class="wonder-title">5. Machu Picchu</h3>
+                <p class="wonder-description">
+                Machu Picchu is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a mountain ridge at 2,430 meters (7,970 ft).
+                Often referred to as the "Lost City of the Incas", it is the most familiar icon of the Inca Empire.
+                </p>
+                <a href="Machu Picchu.html" class="read-more">Read More</a>
+            </div>
+            </div>
+
+            <div class="wonder-card">
+            <img src="Image/Petra.jpg" alt="Petra" class="wonder-img">
+            <div class="wonder-content">
+                <h3 class="wonder-title">6. Petra</h3>
+                <p class="wonder-description">
+                The area around Petra has been inhabited from as early as 7000 BC, and was settled by the Nabataeans, a nomadic Arab people. 
+                Petra would later become the capital city of the Nabataean Kingdom in the second century BC.
+                </p>
+                <a href="Petra.html" class="read-more">Read More</a>
+            </div>
+            </div>
+
+            <div class="wonder-card">
+            <img src="Image/taj.jpg" alt="Taj Mahal" class="wonder-img">
+            <div class="wonder-content">
+                <h3 class="wonder-title">7. Taj Mahal</h3>
+                <p class="wonder-description">
+                The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India. 
+                It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan to house the tomb of his beloved wife, Mumtaz Mahal.
+                </p>
+                <a href="Taj.html" class="read-more">Read More</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+    <div class="back-to-top">↑</div>
+    
+    <!-- <footer>
+        <div class="footer-content">
+            <p>© 2024 7 Wonders of the World | All Rights Reserved</p>
+        </div>
+    </footer> -->
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

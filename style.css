@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Josefin Sans", sans-serif; */
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+    url("Image/taj.jpg");
+  background-size: cover;
+  background-position: center;
+  animation: changetext 10s infinite;
+}
+
+nav {
+  width: 100%;
+  height: 15vh;
+  /* background: rgba(0, 0, 0, 0.2); */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  position: relative;
+}
+
+nav .logo {
+  width: 25%;
+  text-align: center;
+  padding-left: 20px;
+}
+
+nav .menu {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .menu a {
+  width: 25%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav .menu a:first-child {
+  color: #00b894;
+}
+
+nav .menu a:hover {
+  color: #00b894;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger div {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+main {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+section h3 {
+  font-size: 35px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px black;
+}
+
+section h1 {
+  margin: 30px 0 20px 0;
+  font-size: 55px;
+  font-weight: 700;
+  text-shadow: 2px 1px 5px black;
+  text-transform: uppercase;
+}
+
+section p {
+  font-size: 25px;
+  word-spacing: 2px;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 1px black;
+}
+
+section a {
+  padding: 12px 30px;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  margin: 5px;
+  display: inline-block;
+}
+
+section .btnone {
+  background: #fff;
+  color: #000;
+}
+
+.btnone:hover {
+  background: #00b894;
+  color: white;
+}
+
+section .btntwo {
+  background: #00b894;
+  color: white;
+}
+
+.btntwo:hover {
+  background: #fff;
+  color: #000;
+}
+
+.change_content:after {
+  content: "";
+  animation: changetext 10s infinite linear;
+  color: #00b894;
+}
+
+@keyframes changetext {
+  0% {
+    content: "Chichén Itzá";
+    background-image: url("Image/Chichén Itzá.jpg");
+  }
+  15% {
+    content: "Christ the Redeemer";
+    background-image: url("Image/Christ the Redeeme.jpg");
+  }
+  20% {
+    content: "Colosseum";
+    background-image: url("Image/Colosseum.jpg");
+  }
+  40% {
+    content: "Great Wall of China";
+    background-image: url("Image/Great.jpg");
+  }
+  60% {
+    content: "Machu Picchu";
+    background-image: url("Image/Machu Picchu.jpg");
+  }
+  80% {
+    content: "Petra";
+    background-image: url("Image/Petra.jpg");
+  }
+  100% {
+    content: "Taj Mahal";
+    background-image: url("Image/taj.jpg");
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  nav .menu {
+    width: 50%;
+  }
+  
+  section h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .logo {
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  nav .menu {
+    position: fixed;
+    top: 15vh;
+    right: -100%;
+    width: 50%;
+    height: 85vh;
+    /* background: rgba(0, 0, 0, 0.9); */
+    flex-direction: column;
+    align-items: center;
+    justify-content: normal;
+    transition: all 0.5s ease;
+    z-index: 10;
+  }
+
+  nav .menu.active {
+    right: 0;
+  }
+
+  nav .menu a {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hamburger animation */
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 8px);
+  }
+
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -8px);
+  }
+
+  section h3 {
+    font-size: 28px;
+  }
+
+  section h1 {
+    font-size: 38px;
+    margin: 20px 0 15px 0;
+  }
+
+  section p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  section a {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav .logo {
+    width: 70%;
+    font-size: 16px;
+  }
+
+  nav .menu {
+    width: 70%;
+  }
+
+  section h3 {
+    font-size: 22px;
+  }
+
+  section h1 {
+    font-size: 28px;
+  }
+
+  section p {
+    font-size: 16px;
+  }
+
+  section a {
+    padding: 10px 15px;
+    font-size: 11px;
+    margin: 5px 2px;
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  section a {
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+  }
+}
+
+/* For extremely small devices */
+@media (max-width: 320px) {
+  section h3 {
+    font-size: 20px;
+  }
+
+  section h1 {
+    font-size: 24px;
+  }
+
+  section p {
+    font-size: 14px;
+  }
+  
+  nav .logo h1 {
+    font-size: 16px;
+  }
+}
+
+/* Prevent animation on devices that might have performance issues */
+@media (prefers-reduced-motion: reduce) {
+  .change_content:after,
+  header {
+    animation: none;
+  }
+  
+  header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+      url("Image/taj.jpg");
+  }
+}

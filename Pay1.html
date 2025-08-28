@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment-Page</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+    <div class="container">
+        <form action="Successful.html">
+    <div class="col">
+                    <h3 class="title">Payment</h3>
+
+                    <div class="inputBox">
+                        <label for="name">
+                              Card Accepted:
+                          </label>
+                        <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20240715140014/Online-Payment-Project.webp" 
+                             alt="credit/debit card image">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard">
+                    <img src="https://img.icons8.com/color/48/000000/amex.png" alt="American Express">
+                    <img src="https://img.icons8.com/color/48/000000/discover.png" alt="Discover"><br><br>
+                    <h4>Online Payment</h4>
+                    <img src="https://img.icons8.com/color/48/000000/phone-pe.png" alt="PhonePe">
+                    <img src="https://img.icons8.com/color/48/000000/google-pay.png" alt="Google Pay">
+                    <img src="https://img.icons8.com/color/48/000000/paytm.png" alt="Paytm">
+                    <img src="https://img.icons8.com/color/48/000000/amazon.png" alt="Amazon Pay">
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardName">
+                              Re-Enter Name On Card:
+                          </label>
+                        <input type="text" id="cardName" 
+                               placeholder="Enter card name" 
+                               required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cardNum">
+                              Re-Enter Credit Card Number:
+                          </label>
+                        <input type="text" id="cardNum" 
+                               placeholder="1111-2222-3333-4444" 
+                               maxlength="19" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="">Exp Month:</label>
+                        <select name="" id="">
+                            <option value="">Choose month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <label for="">Exp Year:</label>
+                            <select name="" id="">
+                                <option value="">Choose Year</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                        </div>
+
+                        <div class="inputBox">
+                            <label for="cvv">CVV</label>
+                            <input type="number" id="cvv" 
+                                   placeholder="1234" required>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="submit" value="Book Your Ticket" 
+                   class="submit_btn">
+            </div>
+        </form>
+        </div>
+
+                <script type="text/javascript" src="pay.js"></script>
+</body>
+</html>

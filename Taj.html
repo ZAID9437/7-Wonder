@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Image/taj.jpg" type="image/X-icon">
+    <title>Taj Mahal</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="learn.html" class="active">Home</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Services</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+    <h1>WELCOME TO TAJ MAHAL (Agra / India)</h1>
+    <center>
+    <img src="Image/taj.jpg" alt="th" id="display"><br><br>
+
+    <input type="radio" name="image" value="Taj Mahal/Taj 1.jpg" onclick="changeimage(this.value)">
+    <input type="radio" name="image" value="Taj Mahal/Taj 2.jpg" onclick="changeimage(this.value)">
+    <input type="radio" name="image" value="Taj Mahal/Taj 3.jpg" onclick="changeimage(this.value)">
+    <input type="radio" name="image" value="Taj Mahal/Taj 4.jpg" onclick="changeimage(this.value)">
+    </center>
+
+    <h2>1.History of Taj Mahal</h2>
+    <p> <span style='font-size:1.5em;'>&#8594; T</span>he Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), to house the tomb of his favorite wife, Mumtaz Mahal. It also houses the tomb of Shah Jahan himself. The tomb is the center piece of a 17-hectare (42-acre) complex, which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall.</p><hr>
+    
+    
+    <h2>2.Origins and architecture of the Taj Mahal</h2>
+    <p><span style='font-size:1.5em;'>&#8594; T</span>he Taj Mahal represents the finest and most sophisticated example of Indo-Islamic architecture. Its origins lie in the moving circumstances of its commission and the culture and history of an Islamic Mughal empire's rule of large parts of India. The distraught Mughal Emperor Shah Jahan commissioned the project upon the death of one of his favorite wives Mumtaz Mahal.</p>
+    <p><span style='font-size:1.5em;'>&#8594; A</span> masterpiece of the Mughal chief architect Ahmad ma'mar, it is one of the most famous and recognizable buildings in the world today. While the large, domed marble mausoleum is the most familiar part of the monument, the Taj Mahal is an extensive complex of buildings and gardens that extends over 22.44 hectares (55.5 acres)[note 1][1] and includes subsidiary tombs, waterworks infrastructure, the small town of Taj Ganji to the south and a 'moonlight garden' to the north of the river. Construction of Taj Mahal began in 1632 AD, (1041 AH), on the south bank of the River Yamuna in Agra, and was substantially complete by 1648 AD (1058 AH). The design was conceived as an earthly replica of the house of Mumtaz Mahal in paradise.</p><hr>
+   
+   <h2>3.Mumtaz and Shah Jahan</h2>
+   <p><span style='font-size:1.5em;'>&#8594; I</span>n 1607 (AH 1025) the Mughal Prince Khurrum (later to become Shah Jahan) was betrothed to Arjumand Banu Begum, the grand daughter of a Persian noble. She would become the unquestioned love of his life. They were married five years later in 1612. After their wedding celebrations, Khurram "finding her in appearance and character elect among all the women of the time," gave her the title Mumtaz Mahal (Jewel of the Palace).</p>
+   <p><span style='font-size:1.5em;'>&#8594; T</span>he intervening years had seen Khurrum take two other wives known as Akbarabadi Mahal and Kandahari Mahal, but according to the official court chronicler Qazwini, the relationship with his other wives "had little more than the status of marriage. The intimacy, deep affection, attention and favour which His Majesty had for the Cradle of Excellence [Mumtaz] lacked by a thousand times what he felt for any other."</p>   
+   <p><span style='font-size:1.5em;'>&#8594; M</span>umtaz died in Burhanpur on 17 June 1631, after complications with the birth of their fourteenth child, a daughter named Gauhara Begum.[5] She had been accompanying her husband whilst he was fighting a campaign in the Deccan Plateau.[6] Her body was temporarily buried in a garden called Zainabad on the banks of the Tapti River in Burhanpur.[5] The contemporary court chroniclers paid an unusual amount of attention to this event and Shah Jahan's grief at her demise. Immediately after hearing the news, the emperor was reportedly inconsolable. He was not seen for a week at court and considered abdicating and living his life as a religious recluse. The court historian Muhammad Amin Qazwini, wrote that before his wife's death the emperor's beard had "not more than ten or twelve grey hairs, which he used to pluck out', turned grey and eventually white"[7] and that he soon needed spectacles because his eyes deteriorated from constant weeping. Since Mumtaz had died on Wednesday, all entertainments were banned on that day. Jahan gave up listening to music, wearing jewelry, sumptuous clothes or perfumes for two years. So concerned were the imperial family that an honorary uncle wrote to say that "if he continued to abandon himself to his mourning, Mumtaz might think of giving up the joys of Paradise to come back to earth, this place of misery – and he should also consider the children she had left to his care." The Austrian scholar Ebba Koch compares Shah Jahan to "Majnun, the ultimate lover of Muslim lore, who flees into the desert to pine for his unattainable Layla."</p><hr>
+   
+   <h2>4.Inside View Of Taj Mahal</h2>
+   <center>
+    <img src="Taj Mahal/image.jpg" alt="th" id="display1"><br><br>
+
+    <input type="radio" name="image" value="Taj Mahal/Inside 1.jpg" onclick="changeimage1(this.value)">
+    <input type="radio" name="image" value="Taj Mahal/Inside 2.jpg" onclick="changeimage1(this.value)">
+    <input type="radio" name="image" value="Taj Mahal/Inside 3.jpg" onclick="changeimage1(this.value)">
+    <input type="radio" name="image" value="Taj Mahal/Inside 4.jpg" onclick="changeimage1(this.value)">
+    </center>
+    <hr>
+   
+    <script>
+        let currentIndex = 0;
+        let currentIndex1 = 0;
+        const images = [
+            "Taj Mahal/Taj 1.jpg",
+            "Taj Mahal/Taj 2.jpg",
+            "Taj Mahal/Taj 3.jpg",
+            "Taj Mahal/Taj 4.jpg"
+        ];
+        const images1 = [
+            "Taj Mahal/Inside 1.jpg",
+            "Taj Mahal/Inside 2.jpg",
+            "Taj Mahal/Inside 3.jpg",
+            "Taj Mahal/Inside 4.jpg"
+        ];
+    
+        function changeimage(image){
+            document.getElementById("display").src=image;
+        }
+    
+        function changeimage1(image){
+            document.getElementById("display1").src=image;
+        }
+    
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            changeimage(images[currentIndex]);
+        }
+    
+        function autoSlide1() {
+            currentIndex1 = (currentIndex1 + 1) % images1.length;
+            changeimage1(images1[currentIndex1]);
+        }
+    
+        setInterval(autoSlide, 1000); // Change image every 3 seconds
+        setInterval(autoSlide1, 1000); // Change image every 3 seconds
+    </script>
+</body>
+</html>

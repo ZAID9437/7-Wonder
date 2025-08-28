@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>7 Wonders</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<body>
+
+<header>
+	<nav>
+		<div class="logo"> <h1 style="font-size: 20px;"> 7 Wonders </h1> </div>
+		<div class="menu">
+			<a href="#">Home</a>
+			<a href="index2.html">gallery</a>
+			<a href="Contact.html">contact</a>
+			<a href="login.html">Sign In</a>
+		</div>
+		<div class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</nav>
+
+	<main>
+		<section>
+			<h3>Welcome To 7 Wonders</h3>
+			<h1>DO COME & VISIT <span class="change_content"> </span> <span style="margin-top: -10px;">  </span> </h1>
+			<p>"World once is not enough"</p>
+			<a href="learn.html" class="btnone">learn more</a>
+			<a href="back-img.html" class="btntwo">Ticket Booking</a>
+		</section>
+	</main>
+</header>
+
+<script>
+	// JavaScript for hamburger menu toggle
+	document.addEventListener('DOMContentLoaded', function() {
+		const hamburger = document.querySelector('.hamburger');
+		const menu = document.querySelector('.menu');
+		
+		hamburger.addEventListener('click', function() {
+			this.classList.toggle('active');
+			menu.classList.toggle('active');
+		});
+		
+		// Close menu when clicking on a link
+		const menuLinks = document.querySelectorAll('.menu a');
+		menuLinks.forEach(link => {
+			link.addEventListener('click', function() {
+				hamburger.classList.remove('active');
+				menu.classList.remove('active');
+			});
+		});
+		
+		// Close menu when clicking outside
+		document.addEventListener('click', function(event) {
+			const isClickInsideNav = event.target.closest('nav');
+			if (!isClickInsideNav && menu.classList.contains('active')) {
+				hamburger.classList.remove('active');
+				menu.classList.remove('active');
+			}
+		});
+	});
+</script>
+</body>
+</html>

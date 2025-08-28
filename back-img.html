@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Wonders Gallery</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            background: #f9f9f9;
+        }
+
+        /* Navigation Styles */
+        nav {
+            width: 100%;
+            height: 70px;
+            /* background: rgba(0, 0, 0, 0.9); */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            width: 25%;
+            text-align: center;
+        }
+
+        nav .logo h1 {
+            font-size: 20px;
+        }
+
+        nav .menu {
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav .menu a:first-child {
+            color: #00b894;
+        }
+
+        nav .menu a:hover {
+            color: #00b894;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Section Styles */
+        .section {
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .section p {
+            font-size: 50px;
+            margin: 0 0 30px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 2;
+            padding: 0 10px;
+        }
+
+        /* Button Styles */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            background-color: #00b894;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 5px;
+            font-family: 'Josefin Sans', sans-serif;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #019375;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Backgrounds */
+        /* Section Backgrounds */
+        .section1 { background-image: url("Image/taj.jpg"); }
+        .section2 { background-image: url("Image/Christ the Redeeme.jpg"); }
+        .section3 { background-image: url("Image/colosseum.jpg"); }
+        .section4 { background-image: url("Image/petra.jpg"); }
+        .section5 { background-image: url("Image/great.jpg"); }
+        .section6 { background-image: url("Image/machu picchu.jpg"); }
+        .section7 { background-image: url("Image/Chichén Itzá.jpg");}
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #00b894;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            z-index: 99;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background-color: #019375;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            nav .menu {
+                width: 50%;
+            }
+            
+            .section p {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                height: 60px;
+            }
+            
+            nav .logo {
+                width: 70%;
+                text-align: left;
+                padding-left: 10px;
+            }
+
+            nav .menu {
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 60px);
+                /* background: rgba(0, 0, 0, 0.95); */
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: all 0.5s ease;
+                z-index: 1000;
+            }
+
+            nav .menu.active {
+                right: 0;
+            }
+
+            nav .menu a {
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                margin: 0;
+                font-size: 18px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            /* Hamburger animation */
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -8px);
+            }
+
+            .section p {
+                font-size: 38px;
+            }
+
+            .btn {
+                width: 180px;
+                height: 45px;
+                line-height: 45px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo h1 {
+                font-size: 18px;
+            }
+
+            nav .menu {
+                width: 80%;
+            }
+
+            .section p {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .btn {
+                width: 160px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 12px;
+                margin: 8px;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .section p {
+                font-size: 28px;
+            }
+            
+            .btn {
+                width: 140px;
+                height: 38px;
+                line-height: 38px;
+                font-size: 11px;
+            }
+        }
+
+        /* Prevent animation on devices that might have performance issues */
+        @media (prefers-reduced-motion: reduce) {
+            .btn, .back-to-top {
+                transition: none;
+            }
+            
+            .btn:hover, .back-to-top:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <h1>7 Wonders Gallery</h1>
+        </div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="index2.html">Gallery</a>
+            <a href="Contact.html">Contact</a>
+            <a href="login.html">Sign In</a>
+        </div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Sections -->
+    <div class="section section1">
+        <p>Taj Mahal</p>
+        <div class="btn-container">
+            <a href="Taj.html" class="btn">About</a>
+            <a href="Ticket.html" class="btn">Ticket Booking</a>
+        </div>
+    </div>
+    <div class="section section2">
+        <p>Christ the Redeemer</p>
+        <div class="btn-container">
+            <a href="Christ.html" class="btn">About</a>
+            <a href="Ticket.html" class="btn">Ticket Booking</a>
+        </div>
+    </div>
+    <div class="section section3">
+        <p>Colosseum</p>
+        <div class="btn-container">
+            <a href="Colosseum.html" class="btn">About</a>
+            <a href="Ticket.html" class="btn">Ticket Booking</a>
+        </div>
+    </div>
+    <div class="section section4">
+        <p>Petra</p>
+        <div class="btn-container">
+            <a href="Petra.html" class="btn">About</a>
+            <a href="Ticket.html" class="btn">Ticket Booking</a>
+        </div>
+    </div>
+    <div class="section section5">
+        <p>Great Wall of China</p>
+        <div class="btn-container">
+            <a href="Great Wall of China.html" class="btn">About</a>
+            <a href="Ticket.html" class="btn">Ticket Booking</a>
+        </div>
+    </div>
+    <div class="section section6">
+        <p>Machu Picchu</p>
+        <div class="btn-container">
+            <a href="Machu Picchu.html" class="btn">About</a>
+            <a href="Ticket.html" class="btn">Ticket Booking</a>
+        </div>
+    </div>
+    <div class="section section7">
+        <p>Chichen Itza</p>
+        <div class="btn-container">
+            <a href="Chichén Itzá.html" class="btn">About</a>
+            <a href="Ticket.html" class="btn">Ticket Booking</a>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // JavaScript for hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.menu');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                menu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            const menuLinks = document.querySelectorAll('.menu a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    menu.classList.remove('active');
+                });
+            });
+            
+            // Back to top button functionality
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = event.target.closest('nav');
+                if (!isClickInsideNav && menu.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    menu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
