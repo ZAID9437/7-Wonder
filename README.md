@@ -55,16 +55,6 @@
    cd 7-wonder
    ```
 
-3. Follow setup instructions (if applicable for your technology stack).
-
-## Contributing
-
-Contributions are welcome! Feel free to submit issues or pull requests to improve content, add new features, or fix bugs.
-
-## License
-
-This project is licensed under the MIT License.
-
 ## Contact
 
-For questions or feedback, please contact [your-email@example.com].
+For questions or feedback, please contact [mansurizaid663@gmail.com].
