@@ -58,4 +58,4 @@
 
 ## Contact
 
-For questions or feedback, please contact [mansurizaid663@gmail.com].
+For questions or feedback, please contact mansurizaid663@gmail.com
